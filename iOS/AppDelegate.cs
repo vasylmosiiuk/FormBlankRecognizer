@@ -4,6 +4,8 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace FormVision.iOS
 {
@@ -12,10 +14,15 @@ namespace FormVision.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init();
+		    Plugin.Iconize.Iconize.With(new Plugin.Iconize.Fonts.MaterialModule());
 
-			LoadApplication(new App());
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
 
+            Rg.Plugins.Popup.IOS.Popup.Init();
+            global::Xamarin.Forms.Forms.Init();
+            FormsPlugin.Iconize.iOS.IconControls.Init();
+
+            LoadApplication(new App());
 			return base.FinishedLaunching(app, options);
 		}
 	}

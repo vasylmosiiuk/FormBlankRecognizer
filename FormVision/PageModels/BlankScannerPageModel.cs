@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
 
 namespace FormVision
 {
@@ -13,7 +14,7 @@ namespace FormVision
 		{
 			base.Init(initData);
 			await Task.Delay(1000);
-			await CoreMethods.PushPageModel<DemoPopupPageModel>(this, true);
+		    await PopupCoreMethods.PushPageModel<DemoPopupPageModel>();
 		}
 	}
 }

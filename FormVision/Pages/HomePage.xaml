@@ -1,0 +1,284 @@
+﻿<common:XFormsPage x:Class="FormVision.Pages.HomePage"
+                   xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:common="clr-namespace:FormVision.Pages.Common;assembly=FormVision"
+                   xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+                   xmlns:localization="clr-namespace:FormVision.Resources.Localization;assembly=FormVision.Resources.Localization"
+                   xmlns:panel="clr-namespace:FormVision.Views.Panel;assembly=FormVision"
+                   xmlns:views="clr-namespace:FormVision.Views;assembly=FormVision"
+                   Title="{x:Static localization:Strings.HomePage_PageTitle}">
+    <common:XFormsPage.TopBarContent>
+        <ContentView BackgroundColor="{StaticResource ColorShade500}" HeightRequest="44">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="44" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="44" />
+                </Grid.ColumnDefinitions>
+                <iconize:IconButton Grid.Column="0"
+                                    FontSize="28"
+                                    Text="md-close"
+                                    TextColor="{StaticResource ColorText500}" />
+                <Label Grid.Column="1"
+                       FontSize="24"
+                       HorizontalTextAlignment="Center"
+                       Text="Dashboard"
+                       TextColor="{StaticResource ColorText500}"
+                       VerticalTextAlignment="Center" />
+                <iconize:IconButton Grid.Column="2"
+                                    FontSize="28"
+                                    Text="md-account-circle"
+                                    TextColor="{StaticResource ColorText500}" />
+            </Grid>
+        </ContentView>
+    </common:XFormsPage.TopBarContent>
+    <Grid BackgroundColor="{StaticResource ColorShade50}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <ContentView x:Name="EventsContainer"
+                     Grid.Row="0"
+                     Padding="16">
+            <panel:Panel BorderColor="{StaticResource ColorShade300}"
+                         BorderWidth="1"
+                         CornerRadius="{StaticResource CornerRadiusPrimary}"
+                         FillColor="{StaticResource ColorShade200}"
+                         HasShadow="True"
+                         Padding="8"
+                         ShadowOffset="1"
+                         ShadowRadius="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           Text="Connection status"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           FontSize="16"
+                           HorizontalTextAlignment="End"
+                           Text="Connected"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           Text="Tasks queue (all/your)"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           FontSize="16"
+                           HorizontalTextAlignment="End"
+                           Text="7/2"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <BoxView Grid.Row="2"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"
+                             BackgroundColor="{StaticResource ColorShade300}"
+                             HeightRequest="1" />
+                    <Label Grid.Row="3"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           Text="Upload status"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="3"
+                           Grid.Column="1"
+                           FontSize="16"
+                           HorizontalTextAlignment="End"
+                           Text="Uploading...(1/155)"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <BoxView Grid.Row="4"
+                             Grid.Column="0"
+                             Grid.ColumnSpan="2"
+                             BackgroundColor="{StaticResource ColorShade300}"
+                             HeightRequest="1" />
+                    <Label Grid.Row="5"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           Text="Completed tasks"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="5"
+                           Grid.Column="1"
+                           FontSize="16"
+                           HorizontalTextAlignment="End"
+                           Text="1"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="6"
+                           Grid.Column="0"
+                           FontAttributes="Bold"
+                           FontSize="12"
+                           Text="Issued tasks"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                    <Label Grid.Row="6"
+                           Grid.Column="1"
+                           FontSize="16"
+                           HorizontalTextAlignment="End"
+                           Text="2"
+                           TextColor="{StaticResource ColorText200}"
+                           VerticalTextAlignment="Center" />
+                </Grid>
+            </panel:Panel>
+        </ContentView>
+        <ContentView x:Name="ActionsContainer"
+                     Grid.Row="1"
+                     MinimumHeightRequest="150"
+                     Padding="16,16">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+                <Grid.Resources>
+                    <ResourceDictionary>
+                        <Style TargetType="views:RoundButton">
+                            <Style.Triggers>
+                                <Trigger TargetType="views:RoundButton" Property="IsPressed" Value="True">
+                                    <Setter Property="ShadowOffset" Value="4" />
+                                    <Setter Property="ShadowRadius" Value="5" />
+                                    <Setter Property="FillColor" Value="{StaticResource ColorShade400}" />
+                                </Trigger>
+                                <Trigger TargetType="views:RoundButton" Property="IsEnabled" Value="False">
+                                    <Setter Property="HasShadow" Value="False" />
+                                    <Setter Property="FillColor" Value="{StaticResource ColorShade200}" />
+                                    <Setter Property="Opacity" Value="0.6" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ResourceDictionary>
+                </Grid.Resources>
+                <views:RoundButton Grid.Row="1"
+                                   BorderColor="{StaticResource ColorShade400}"
+                                   BorderWidth="1"
+                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
+                                   FillColor="{StaticResource ColorShade300}"
+                                   HasShadow="True"
+                                   ShadowOffset="2"
+                                   ShadowRadius="3">
+                    <Grid Padding="4,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="44" />
+                        </Grid.ColumnDefinitions>
+                        <iconize:IconLabel Grid.Column="0"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-group"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               Text="Data"
+                               TextColor="{StaticResource ColorText300}"
+                               VerticalTextAlignment="Center" />
+                        <iconize:IconLabel Grid.Column="2"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-arrow-forward"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                    </Grid>
+                </views:RoundButton>
+                <views:RoundButton Grid.Row="2"
+                                   BorderColor="{StaticResource ColorShade400}"
+                                   BorderWidth="1"
+                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
+                                   FillColor="{StaticResource ColorShade300}"
+                                   HasShadow="True"
+                                   ShadowOffset="2"
+                                   ShadowRadius="3">
+                    <Grid Padding="4,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="44" />
+                        </Grid.ColumnDefinitions>
+                        <iconize:IconLabel Grid.Column="0"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-library-books"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               Text="Tasks"
+                               TextColor="{StaticResource ColorText300}"
+                               VerticalTextAlignment="Center" />
+                        <iconize:IconLabel Grid.Column="2"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-arrow-forward"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                    </Grid>
+                </views:RoundButton>
+                <views:RoundButton Grid.Row="3"
+                                   BorderColor="{StaticResource ColorShade400}"
+                                   BorderWidth="1"
+                                   Command="{Binding NavigateToSettingsCommand}"
+                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
+                                   FillColor="{StaticResource ColorShade300}"
+                                   HasShadow="True"
+                                   ShadowOffset="2"
+                                   ShadowRadius="3">
+                    <Grid Padding="4,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="44" />
+                        </Grid.ColumnDefinitions>
+                        <iconize:IconLabel Grid.Column="0"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-settings"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               Text="Settings"
+                               TextColor="{StaticResource ColorText300}"
+                               VerticalTextAlignment="Center" />
+                        <iconize:IconLabel Grid.Column="2"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-arrow-forward"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                    </Grid>
+                </views:RoundButton>
+            </Grid>
+        </ContentView>
+    </Grid>
+</common:XFormsPage>

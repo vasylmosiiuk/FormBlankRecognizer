@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
@@ -18,25 +18,35 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NGraphicsEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\HomePageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BlankScannerPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\Common\PopupPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Common\XFormsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Popups\DemoPopupPage.xaml.cs">
       <DependentUpon>DemoPopupPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\BlankScannerPageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\Common\PageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\Popups\DemoPopupPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Platform\PopupCoreMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Panel\Panel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RoundButton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
-    <Folder Include="$(MSBuildThisFileDirectory)PageModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
     <Folder Include="$(MSBuildThisFileDirectory)PageModels\Common\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Pages\Common\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\Popups\" />
     <Folder Include="$(MSBuildThisFileDirectory)PageModels\Popups\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\TopBar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

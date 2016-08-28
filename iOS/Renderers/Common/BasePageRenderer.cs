@@ -6,6 +6,10 @@ namespace FormVision.iOS
 {
 	public abstract class BasePageRenderer : PageRenderer
 	{
+        protected BasePageRenderer()
+	    {
+	        
+	    }
 		protected BasePageRenderer(string nibName)
 		{
 			NSBundle.MainBundle.LoadNib(nibName, this, null);

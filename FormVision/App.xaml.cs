@@ -1,4 +1,5 @@
-﻿using FreshMvvm;
+﻿using FormVision.PageModels;
+using FreshMvvm;
 using Xamarin.Forms;
 
 namespace FormVision
@@ -9,9 +10,10 @@ namespace FormVision
 		{
 			InitializeComponent();
 
-			var page = FreshPageModelResolver.ResolvePageModel<BlankScannerPageModel>();
+			var page = FreshPageModelResolver.ResolvePageModel<HomePageModel>();
 			var basicNavContainer = new FreshNavigationContainer(page);
-			MainPage = basicNavContainer;
+            basicNavContainer.SetValue(NavigationPage.BarTextColorProperty, Color.White);
+            MainPage = basicNavContainer;
 		}
 
 		protected override void OnStart()

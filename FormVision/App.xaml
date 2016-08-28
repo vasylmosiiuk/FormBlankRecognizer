@@ -1,6 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FormVision.App">
-	<Application.Resources>
-		<!-- Application resource dictionary -->
-	</Application.Resources>
+﻿<Application x:Class="FormVision.App"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--  App common color scheme begin  -->
+            <Color x:Key="ColorWhite">#FFFFFF</Color>
+            <Color x:Key="ColorBlack">#000000</Color>
+            <Color x:Key="ColorShade50">#ECEFF1</Color>
+            <Color x:Key="ColorShade100">#CFD8DC</Color>
+            <Color x:Key="ColorShade200">#B0BEC5</Color>
+            <Color x:Key="ColorShade300">#90A4AE</Color>
+            <Color x:Key="ColorShade400">#78909C</Color>
+            <Color x:Key="ColorShade500">#607D8B</Color>
+            <Color x:Key="ColorShade600">#546E7A</Color>
+            <Color x:Key="ColorShade700">#455A64</Color>
+            <Color x:Key="ColorShade800">#37474F</Color>
+            <Color x:Key="ColorShade900">#263238</Color>
+            <Color x:Key="ColorText50">#000000</Color>
+            <Color x:Key="ColorText100">#000000</Color>
+            <Color x:Key="ColorText200">#000000</Color>
+            <Color x:Key="ColorText300">#FFFFFF</Color>
+            <Color x:Key="ColorText400">#FFFFFF</Color>
+            <Color x:Key="ColorText500">#FFFFFF</Color>
+            <Color x:Key="ColorText600">#FFFFFF</Color>
+            <Color x:Key="ColorText700">#FFFFFF</Color>
+            <Color x:Key="ColorText800">#FFFFFF</Color>
+            <Color x:Key="ColorText900">#FFFFFF</Color>
+            <!--  App common color scheme end  -->
+          <x:Double x:Key="CornerRadiusPrimary">2</x:Double>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
