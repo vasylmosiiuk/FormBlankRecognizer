@@ -16,6 +16,8 @@ namespace FormVision
 			await Task.Delay(1000);
 		    await PopupCoreMethods.PushPageModel<DemoPopupPageModel>();
 		}
+
+	    public override string PageTitle =>"";
 	}
 }
 

@@ -62,11 +62,119 @@ namespace FormVision.Resources.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Home.
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string DataPage_PageTitle {
+            get {
+                return ResourceManager.GetString("DataPage_PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data.
+        /// </summary>
+        public static string HomePage_ActionsContainer_DataButtonText {
+            get {
+                return ResourceManager.GetString("HomePage_ActionsContainer_DataButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string HomePage_ActionsContainer_SettingsButtonText {
+            get {
+                return ResourceManager.GetString("HomePage_ActionsContainer_SettingsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string HomePage_ActionsContainer_TasksButtonText {
+            get {
+                return ResourceManager.GetString("HomePage_ActionsContainer_TasksButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed tasks.
+        /// </summary>
+        public static string HomePage_EventsContainer_CompletedTasksCaptionLabelText {
+            get {
+                return ResourceManager.GetString("HomePage_EventsContainer_CompletedTasksCaptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ConnectionStatus.
+        /// </summary>
+        public static string HomePage_EventsContainer_ConnectionStatusCaptionLabelText {
+            get {
+                return ResourceManager.GetString("HomePage_EventsContainer_ConnectionStatusCaptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issued tasks.
+        /// </summary>
+        public static string HomePage_EventsContainer_IssuedTasksCaptionLabelText {
+            get {
+                return ResourceManager.GetString("HomePage_EventsContainer_IssuedTasksCaptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks queue (all/your).
+        /// </summary>
+        public static string HomePage_EventsContainer_TasksQueueCaptionLabelText {
+            get {
+                return ResourceManager.GetString("HomePage_EventsContainer_TasksQueueCaptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload status.
+        /// </summary>
+        public static string HomePage_EventsContainer_UploadStatusCaptionLabelText {
+            get {
+                return ResourceManager.GetString("HomePage_EventsContainer_UploadStatusCaptionLabelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
         /// </summary>
         public static string HomePage_PageTitle {
             get {
                 return ResourceManager.GetString("HomePage_PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string ProfilePage_PageTitle {
+            get {
+                return ResourceManager.GetString("ProfilePage_PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string SettingsPage_PageTitle {
+            get {
+                return ResourceManager.GetString("SettingsPage_PageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string TasksPage_PageTitle {
+            get {
+                return ResourceManager.GetString("TasksPage_PageTitle", resourceCulture);
             }
         }
     }

@@ -18,10 +18,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NotifyPropertyChanges.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NGraphicsEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\DataPageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\HomePageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\SettingsPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\ProfilePageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\Tasks\TasksHome\TasksListItemsGroupViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\Tasks\TasksHome\TasksListItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageModels\Tasks\TasksHome\TasksPageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BlankScannerPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Common\XFormsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\DataPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,21 +41,49 @@
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\BlankScannerPageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\Common\PageModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PageModels\Popups\DemoPopupPageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ProfilePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TasksPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Platform\PopupCoreMethods.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Panel\Panel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\RoundButton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
     <Folder Include="$(MSBuildThisFileDirectory)PageModels\Common\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\Popups\" />
     <Folder Include="$(MSBuildThisFileDirectory)PageModels\Popups\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\TopBar\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\DataPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\TasksPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

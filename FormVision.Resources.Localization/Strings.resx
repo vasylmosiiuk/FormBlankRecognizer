@@ -117,7 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataPage_PageTitle" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="HomePage_ActionsContainer_DataButtonText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="HomePage_ActionsContainer_SettingsButtonText" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="HomePage_ActionsContainer_TasksButtonText" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="HomePage_EventsContainer_CompletedTasksCaptionLabelText" xml:space="preserve">
+    <value>Completed tasks</value>
+  </data>
+  <data name="HomePage_EventsContainer_ConnectionStatusCaptionLabelText" xml:space="preserve">
+    <value>ConnectionStatus</value>
+  </data>
+  <data name="HomePage_EventsContainer_IssuedTasksCaptionLabelText" xml:space="preserve">
+    <value>Issued tasks</value>
+  </data>
+  <data name="HomePage_EventsContainer_TasksQueueCaptionLabelText" xml:space="preserve">
+    <value>Tasks queue (all/your)</value>
+  </data>
+  <data name="HomePage_EventsContainer_UploadStatusCaptionLabelText" xml:space="preserve">
+    <value>Upload status</value>
+  </data>
   <data name="HomePage_PageTitle" xml:space="preserve">
-    <value>Home</value>
+    <value>Dashboard</value>
+  </data>
+  <data name="ProfilePage_PageTitle" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="SettingsPage_PageTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TasksPage_PageTitle" xml:space="preserve">
+    <value>Tasks</value>
   </data>
 </root>

@@ -1,35 +1,52 @@
-﻿using FormVision.PageModels;
+﻿using System.Threading.Tasks;
+using Acr.Settings;
+using AutoMapper;
+using AutoMapper.Mappers;
+using FormVision.IoC;
+using FormVision.PageModels;
 using FreshMvvm;
+using FreshTinyIoC;
+using Realms;
 using Xamarin.Forms;
 
 namespace FormVision
 {
-	public partial class App : Application
-	{
-		public App()
-		{
-			InitializeComponent();
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-			var page = FreshPageModelResolver.ResolvePageModel<HomePageModel>();
-			var basicNavContainer = new FreshNavigationContainer(page);
+            var page = FreshPageModelResolver.ResolvePageModel<HomePageModel>();
+            var basicNavContainer = new FreshNavigationContainer(page);
             basicNavContainer.SetValue(NavigationPage.BarTextColorProperty, Color.White);
             MainPage = basicNavContainer;
-		}
+        }
 
-		protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
+        protected override async void OnStart()
+        {
+            InitMapper();
+            FreshTinyIoCContainer.Current.Register(Realm.GetInstance());
+            FreshTinyIoCContainer.Current.Register(Settings.Local);
 
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
+            FreshTinyIoCContainer.Current.AutoRegister(new[] {typeof(App).Assembly});
 
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
-		}
-	}
+            var modulesInitializer = new ModulesInitializer();
+            await modulesInitializer.InitModules();
+        }
+
+        private void InitMapper()
+        {
+        }
+
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+    }
 }
-

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<common:XFormsPage x:Class="FormVision.Pages.TasksPage"
+                   xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:common="clr-namespace:FormVision.Pages.Common;assembly=FormVision"
+                   xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+                   x:Name="Page"
+                   Title="{Binding PageTitle}">
+    <common:XFormsPage.TopBarContent>
+        <ContentView BackgroundColor="{StaticResource ColorShade500}" HeightRequest="44">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="44" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="44" />
+                </Grid.ColumnDefinitions>
+                <iconize:IconButton Grid.Column="0"
+                                    Command="{Binding NavigateToBackCommand}"
+                                    FontSize="28"
+                                    Text="md-arrow-back"
+                                    TextColor="{StaticResource ColorText500}" />
+                <Label Grid.Column="1"
+                       FontSize="24"
+                       HorizontalTextAlignment="Center"
+                       Text="{Binding PageTitle}"
+                       TextColor="{StaticResource ColorText500}"
+                       VerticalTextAlignment="Center" />
+                <iconize:IconButton Grid.Column="2"
+                                    Command="{Binding CreateNewTaskCommand}"
+                                    FontSize="28"
+                                    Text="md-add"
+                                    TextColor="{StaticResource ColorText500}" />
+            </Grid>
+        </ContentView>
+    </common:XFormsPage.TopBarContent>
+    <ContentView>
+        <ListView GroupDisplayBinding="{Binding Title}"
+                  IsGroupingEnabled="true"
+                  ItemsSource="{Binding TasksGroups}">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}"
+                              Text="{Binding Title}"
+                              TextColor="{Binding BackgroundColor}" />
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Comment}" Text="{Binding Title}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentView>
+</common:XFormsPage>

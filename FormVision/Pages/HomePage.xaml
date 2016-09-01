@@ -6,6 +6,7 @@
                    xmlns:localization="clr-namespace:FormVision.Resources.Localization;assembly=FormVision.Resources.Localization"
                    xmlns:panel="clr-namespace:FormVision.Views.Panel;assembly=FormVision"
                    xmlns:views="clr-namespace:FormVision.Views;assembly=FormVision"
+                   x:Name="Page"
                    Title="{x:Static localization:Strings.HomePage_PageTitle}">
     <common:XFormsPage.TopBarContent>
         <ContentView BackgroundColor="{StaticResource ColorShade500}" HeightRequest="44">
@@ -15,24 +16,22 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="44" />
                 </Grid.ColumnDefinitions>
-                <iconize:IconButton Grid.Column="0"
-                                    FontSize="28"
-                                    Text="md-close"
-                                    TextColor="{StaticResource ColorText500}" />
                 <Label Grid.Column="1"
                        FontSize="24"
                        HorizontalTextAlignment="Center"
-                       Text="Dashboard"
+                       Text="{Binding Path=Title,
+                                      Source={x:Reference Page}}"
                        TextColor="{StaticResource ColorText500}"
                        VerticalTextAlignment="Center" />
                 <iconize:IconButton Grid.Column="2"
+                                    Command="{Binding NavigateToProfileCommand}"
                                     FontSize="28"
-                                    Text="md-account-circle"
+                                    Text="md-person"
                                     TextColor="{StaticResource ColorText500}" />
             </Grid>
         </ContentView>
     </common:XFormsPage.TopBarContent>
-    <Grid BackgroundColor="{StaticResource ColorShade50}">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="3*" />
@@ -67,7 +66,7 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            FontSize="12"
-                           Text="Connection status"
+                           Text="{x:Static localization:Strings.HomePage_EventsContainer_ConnectionStatusCaptionLabelText}"
                            TextColor="{StaticResource ColorText200}"
                            VerticalTextAlignment="Center" />
                     <Label Grid.Row="0"
@@ -81,7 +80,7 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            FontSize="12"
-                           Text="Tasks queue (all/your)"
+                           Text="{x:Static localization:Strings.HomePage_EventsContainer_TasksQueueCaptionLabelText}"
                            TextColor="{StaticResource ColorText200}"
                            VerticalTextAlignment="Center" />
                     <Label Grid.Row="1"
@@ -100,7 +99,7 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            FontSize="12"
-                           Text="Upload status"
+                           Text="{x:Static localization:Strings.HomePage_EventsContainer_UploadStatusCaptionLabelText}"
                            TextColor="{StaticResource ColorText200}"
                            VerticalTextAlignment="Center" />
                     <Label Grid.Row="3"
@@ -119,7 +118,7 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            FontSize="12"
-                           Text="Completed tasks"
+                           Text="{x:Static localization:Strings.HomePage_EventsContainer_CompletedTasksCaptionLabelText}"
                            TextColor="{StaticResource ColorText200}"
                            VerticalTextAlignment="Center" />
                     <Label Grid.Row="5"
@@ -133,7 +132,7 @@
                            Grid.Column="0"
                            FontAttributes="Bold"
                            FontSize="12"
-                           Text="Issued tasks"
+                           Text="{x:Static localization:Strings.HomePage_EventsContainer_IssuedTasksCaptionLabelText}"
                            TextColor="{StaticResource ColorText200}"
                            VerticalTextAlignment="Center" />
                     <Label Grid.Row="6"
@@ -160,6 +159,13 @@
                 <Grid.Resources>
                     <ResourceDictionary>
                         <Style TargetType="views:RoundButton">
+                            <Setter Property="BorderColor" Value="{StaticResource ColorShade400}" />
+                            <Setter Property="BorderWidth" Value="1" />
+                            <Setter Property="CornerRadius" Value="{StaticResource CornerRadiusPrimary}" />
+                            <Setter Property="FillColor" Value="{StaticResource ColorShade300}" />
+                            <Setter Property="HasShadow" Value="True" />
+                            <Setter Property="ShadowOffset" Value="2" />
+                            <Setter Property="ShadowRadius" Value="3" />
                             <Style.Triggers>
                                 <Trigger TargetType="views:RoundButton" Property="IsPressed" Value="True">
                                     <Setter Property="ShadowOffset" Value="4" />
@@ -169,54 +175,14 @@
                                 <Trigger TargetType="views:RoundButton" Property="IsEnabled" Value="False">
                                     <Setter Property="HasShadow" Value="False" />
                                     <Setter Property="FillColor" Value="{StaticResource ColorShade200}" />
-                                    <Setter Property="Opacity" Value="0.6" />
+                                    <Setter Property="BorderColor" Value="{StaticResource ColorShade100}" />
+                                    <Setter Property="Opacity" Value="0.9" />
                                 </Trigger>
                             </Style.Triggers>
                         </Style>
                     </ResourceDictionary>
                 </Grid.Resources>
-                <views:RoundButton Grid.Row="1"
-                                   BorderColor="{StaticResource ColorShade400}"
-                                   BorderWidth="1"
-                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
-                                   FillColor="{StaticResource ColorShade300}"
-                                   HasShadow="True"
-                                   ShadowOffset="2"
-                                   ShadowRadius="3">
-                    <Grid Padding="4,0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="44" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="44" />
-                        </Grid.ColumnDefinitions>
-                        <iconize:IconLabel Grid.Column="0"
-                                           FontSize="28"
-                                           HorizontalOptions="Center"
-                                           Text="md-group"
-                                           TextColor="{StaticResource ColorText300}"
-                                           VerticalOptions="Center" />
-                        <Label Grid.Column="1"
-                               FontSize="24"
-                               HorizontalTextAlignment="Center"
-                               Text="Data"
-                               TextColor="{StaticResource ColorText300}"
-                               VerticalTextAlignment="Center" />
-                        <iconize:IconLabel Grid.Column="2"
-                                           FontSize="28"
-                                           HorizontalOptions="Center"
-                                           Text="md-arrow-forward"
-                                           TextColor="{StaticResource ColorText300}"
-                                           VerticalOptions="Center" />
-                    </Grid>
-                </views:RoundButton>
-                <views:RoundButton Grid.Row="2"
-                                   BorderColor="{StaticResource ColorShade400}"
-                                   BorderWidth="1"
-                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
-                                   FillColor="{StaticResource ColorShade300}"
-                                   HasShadow="True"
-                                   ShadowOffset="2"
-                                   ShadowRadius="3">
+                <views:RoundButton Grid.Row="1" Command="{Binding NavigateToTasksCommand}">
                     <Grid Padding="4,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="44" />
@@ -232,26 +198,33 @@
                         <Label Grid.Column="1"
                                FontSize="24"
                                HorizontalTextAlignment="Center"
-                               Text="Tasks"
+                               Text="{x:Static localization:Strings.HomePage_ActionsContainer_TasksButtonText}"
                                TextColor="{StaticResource ColorText300}"
                                VerticalTextAlignment="Center" />
-                        <iconize:IconLabel Grid.Column="2"
-                                           FontSize="28"
-                                           HorizontalOptions="Center"
-                                           Text="md-arrow-forward"
-                                           TextColor="{StaticResource ColorText300}"
-                                           VerticalOptions="Center" />
                     </Grid>
                 </views:RoundButton>
-                <views:RoundButton Grid.Row="3"
-                                   BorderColor="{StaticResource ColorShade400}"
-                                   BorderWidth="1"
-                                   Command="{Binding NavigateToSettingsCommand}"
-                                   CornerRadius="{StaticResource CornerRadiusPrimary}"
-                                   FillColor="{StaticResource ColorShade300}"
-                                   HasShadow="True"
-                                   ShadowOffset="2"
-                                   ShadowRadius="3">
+                <views:RoundButton Grid.Row="2" Command="{Binding NavigateToDataCommand}">
+                    <Grid Padding="4,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="44" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="44" />
+                        </Grid.ColumnDefinitions>
+                        <iconize:IconLabel Grid.Column="0"
+                                           FontSize="28"
+                                           HorizontalOptions="Center"
+                                           Text="md-group"
+                                           TextColor="{StaticResource ColorText300}"
+                                           VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               Text="{x:Static localization:Strings.HomePage_ActionsContainer_DataButtonText}"
+                               TextColor="{StaticResource ColorText300}"
+                               VerticalTextAlignment="Center" />
+                    </Grid>
+                </views:RoundButton>
+                <views:RoundButton Grid.Row="3" Command="{Binding NavigateToSettingsCommand}">
                     <Grid Padding="4,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="44" />
@@ -267,15 +240,9 @@
                         <Label Grid.Column="1"
                                FontSize="24"
                                HorizontalTextAlignment="Center"
-                               Text="Settings"
+                               Text="{x:Static localization:Strings.HomePage_ActionsContainer_SettingsButtonText}"
                                TextColor="{StaticResource ColorText300}"
                                VerticalTextAlignment="Center" />
-                        <iconize:IconLabel Grid.Column="2"
-                                           FontSize="28"
-                                           HorizontalOptions="Center"
-                                           Text="md-arrow-forward"
-                                           TextColor="{StaticResource ColorText300}"
-                                           VerticalOptions="Center" />
                     </Grid>
                 </views:RoundButton>
             </Grid>

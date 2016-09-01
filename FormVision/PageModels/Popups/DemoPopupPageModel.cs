@@ -6,6 +6,8 @@ namespace FormVision
 		public DemoPopupPageModel()
 		{
 		}
+
+	    public override string PageTitle => "";
 	}
 }
 

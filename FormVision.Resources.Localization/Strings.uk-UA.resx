@@ -117,7 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DataPage_PageTitle" xml:space="preserve">
+    <value>Дані</value>
+  </data>
   <data name="HomePage_PageTitle" xml:space="preserve">
     <value>Головна</value>
+  </data>
+  <data name="ProfilePage_PageTitle" xml:space="preserve">
+    <value>Профіль</value>
+  </data>
+  <data name="SettingsPage_PageTitle" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="TasksPage_PageTitle" xml:space="preserve">
+    <value>Завдання</value>
+  </data>
+  <data name="HomePage_ActionsContainer_DataButtonText" xml:space="preserve">
+    <value>Дані</value>
+  </data>
+  <data name="HomePage_ActionsContainer_SettingsButtonText" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="HomePage_ActionsContainer_TasksButtonText" xml:space="preserve">
+    <value>Завдання</value>
+  </data>
+  <data name="HomePage_EventsContainer_CompletedTasksCaptionLabelText" xml:space="preserve">
+    <value>Виконані завдання</value>
+  </data>
+  <data name="HomePage_EventsContainer_ConnectionStatusCaptionLabelText" xml:space="preserve">
+    <value>Стан з'єднання</value>
+  </data>
+  <data name="HomePage_EventsContainer_IssuedTasksCaptionLabelText" xml:space="preserve">
+    <value>Проблемні завдання</value>
+  </data>
+  <data name="HomePage_EventsContainer_TasksQueueCaptionLabelText" xml:space="preserve">
+    <value>Черга завдань (всі/ваші)</value>
+  </data>
+  <data name="HomePage_EventsContainer_UploadStatusCaptionLabelText" xml:space="preserve">
+    <value>Статус вивантаження</value>
   </data>
 </root>
